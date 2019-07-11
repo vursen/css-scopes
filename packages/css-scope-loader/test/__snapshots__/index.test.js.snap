@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom default scope path 1`] = `
+"exports = module.exports = require(\\"../../../node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
+exports.push([module.id, \\"[__fixtures-components-Component-html].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[__fixtures-components-Component-html].host [__fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[__fixtures-components-Component-html].host [__fixtures-components-Component-html].host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n[__fixtures-components-Component-html].host [__fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
+"
+`;
+
+exports[`zero config 1`] = `
+"exports = module.exports = require(\\"../../../node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
+exports.push([module.id, \\"[__fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[__fixtures-components-Component-js].host [__fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[__fixtures-components-Component-js].host [__fixtures-components-Component-html].host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n[__fixtures-components-Component-js].host [__fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
+"
+`;
