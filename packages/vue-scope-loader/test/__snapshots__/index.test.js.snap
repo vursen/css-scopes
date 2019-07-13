@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`zero config css scope 1`] = `
+"exports = module.exports = require(\\"../../../node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
+exports.push([module.id, \\"\\\\n[__fixtures-components-Component-vue].host {\\\\n  font-size: 15px;\\\\n}\\\\n[__fixtures-components-Component-vue].host [__fixtures-components-Component2-vue].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
+"
+`;
+
+exports[`zero config vue scope 1`] = `
+"var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(\\"div\\", { staticClass: \\"host\\" }, [
+      _c(\\"div\\", { staticClass: \\"title\\" }, [_vm._v(\\"Title\\")])
+    ])
+  }
+]
+render._withStripped = true
+
+export { render, staticRenderFns }"
+`;

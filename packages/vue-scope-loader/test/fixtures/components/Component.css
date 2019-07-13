@@ -1,0 +1,15 @@
+[scope].host {
+  font-size: 15px;
+}
+
+[scope].host [scope='./Component'].host {
+  font-size: 15px;
+}
+
+[scope].host [scope='./Component.html'].host {
+  font-size: 20px;
+}
+
+[scope].host [scope='~/components/Component'].host {
+  font-size: 15px;
+}
