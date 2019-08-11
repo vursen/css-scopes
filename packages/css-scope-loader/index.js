@@ -6,7 +6,10 @@ const loaderUtils = require('loader-utils');
 const SCOPE_SELECTORS_REGEXP = /\[scope(?:=(?:'|")(.+)(?:'|"))?\]/g
 
 const DEFAULT_OPTIONS = {
-  defaultScopePath: './[name].js'
+  defaultScopePath: './[name]',
+  getScopeSelector: (path) => {
+    return `[s-${path.replace(/\/|\./g, '-')}]`;
+  }
 }
 
 module.exports = async function cssScopeLoader(source) {
@@ -35,12 +38,8 @@ module.exports = async function cssScopeLoader(source) {
   }
 
   const output = source.replace(SCOPE_SELECTORS_REGEXP, (scopeSelector) => {
-    return getScopeAttrFromPath(resolvedScopes[scopeSelector]);
+    return options.getScopeSelector(resolvedScopes[scopeSelector]);
   })
 
   callback(null, output);
-}
-
-function getScopeAttrFromPath(path) {
-  return `[__${path.replace(/\/|\./g, '-')}]`;
 }
