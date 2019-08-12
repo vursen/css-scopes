@@ -1,1 +1,1 @@
-import './components/Component.css'
+import './components/Component'

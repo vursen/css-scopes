@@ -1,14 +1,16 @@
 const path = require('path');
-const pify = require('pify');
 const loaderUtils = require('loader-utils');
 
 // TODO improve scope selectors regexp
 const SCOPE_SELECTORS_REGEXP = /\[scope(?:=(?:'|")(.+)(?:'|"))?\]/g
 
 const DEFAULT_OPTIONS = {
-  defaultScopePath: './[name]',
-  getScopeSelector: (path) => {
-    return `[s-${path.replace(/\/|\./g, '-')}]`;
+  extensions: ['.html'],
+  defaultScopePath(sourceName, _sourcePath) {
+    return `./${sourceName}`
+  },
+  scopeSelector(scopePath) {
+    return `[s-${scopePath.replace(/\/|\./g, '-')}]`;
   }
 }
 
@@ -19,11 +21,14 @@ module.exports = async function cssScopeLoader(source) {
   };
 
   const callback = this.async();
-  const resolve = pify(this.resolve);
-
-  const defaultScopePath = loaderUtils.interpolateName(this, options.defaultScopePath, {
-    context: this.rootContext || this.context
+  const resolve = this.getResolve({
+    extensions: options.extensions
   });
+
+  const defaultScopePath = options.defaultScopePath(
+    path.basename(this.resourcePath, path.extname(this.resourcePath)),
+    this.resourcePath
+  );
 
   let foundedScopes = {};
   for (const [scopeSelector, scopePath] of source.matchAll(SCOPE_SELECTORS_REGEXP)) {
@@ -38,7 +43,7 @@ module.exports = async function cssScopeLoader(source) {
   }
 
   const output = source.replace(SCOPE_SELECTORS_REGEXP, (scopeSelector) => {
-    return options.getScopeSelector(resolvedScopes[scopeSelector]);
+    return options.scopeSelector(resolvedScopes[scopeSelector]);
   })
 
   callback(null, output);

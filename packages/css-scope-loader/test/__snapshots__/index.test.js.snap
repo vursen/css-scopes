@@ -1,22 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`custom extensions 1`] = `
+"exports = module.exports = require(\\"../../../node_modules/css-loader/dist/runtime/api.js\\")(false);
+// Module
+exports.push([module.id, \\"[s-fixtures-components-Component-slim].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-slim].host [s-fixtures-components-Component-slim].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-slim].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-slim].host [s-fixtures-components-Component-slim].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
+"
+`;
+
 exports[`default scope path 1`] = `
 "exports = module.exports = require(\\"../../../node_modules/css-loader/dist/runtime/api.js\\")(false);
 // Module
-exports.push([module.id, \\"[s-fixtures-components-Component-html].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-html].host [s-fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-html].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-html].host [s-fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
+exports.push([module.id, \\"[s-fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-js].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-js].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-js].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
 "
 `;
 
 exports[`using class as scope selector 1`] = `
 "exports = module.exports = require(\\"../../../node_modules/css-loader/dist/runtime/api.js\\")(false);
 // Module
-exports.push([module.id, \\".s-fixtures-components-Component-js.host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n.s-fixtures-components-Component-js.host .s-fixtures-components-Component-js.host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n.s-fixtures-components-Component-js.host .s-fixtures-components-Component-html.host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n.s-fixtures-components-Component-js.host .s-fixtures-components-Component-js.host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
+exports.push([module.id, \\".s-fixtures-components-Component-html.host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n.s-fixtures-components-Component-html.host .s-fixtures-components-Component-html.host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n.s-fixtures-components-Component-html.host .s-fixtures-components-Component-html.host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n.s-fixtures-components-Component-html.host .s-fixtures-components-Component-html.host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
 "
 `;
 
 exports[`zero config 1`] = `
 "exports = module.exports = require(\\"../../../node_modules/css-loader/dist/runtime/api.js\\")(false);
 // Module
-exports.push([module.id, \\"[s-fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-js].host [s-fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-js].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-js].host [s-fixtures-components-Component-js].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
+exports.push([module.id, \\"[s-fixtures-components-Component-html].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-html].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-html].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 20px;\\\\n}\\\\n\\\\n[s-fixtures-components-Component-html].host [s-fixtures-components-Component-html].host {\\\\n  font-size: 15px;\\\\n}\\\\n\\", \\"\\"]);
 "
 `;

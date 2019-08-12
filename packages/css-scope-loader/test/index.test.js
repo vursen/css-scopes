@@ -7,9 +7,21 @@ test('zero config', async () => {
   expect(output).toMatchSnapshot()
 });
 
+test('custom extensions', async () => {
+  const stats = await compiler('./fixtures/bundle.js', {
+    extensions: ['.slim']
+  });
+
+  const output = stats.toJson().modules[1].source
+
+  expect(output).toMatchSnapshot()
+});
+
 test('default scope path', async () => {
   const stats = await compiler('./fixtures/bundle.js', {
-    defaultScopePath: './[name].html'
+    defaultScopePath(sourceName, _sourcePath) {
+      return `./${sourceName}.js`
+    }
   });
 
   const output = stats.toJson().modules[1].source
@@ -19,8 +31,8 @@ test('default scope path', async () => {
 
 test('using class as scope selector', async () => {
   const stats = await compiler('./fixtures/bundle.js', {
-    getScopeSelector(path) {
-      return `.s-${path.replace(/\/|\./g, '-')}`;
+    scopeSelector(scopePath) {
+      return `.s-${scopePath.replace(/\/|\./g, '-')}`;
     }
   });
 
